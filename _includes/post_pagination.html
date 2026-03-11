@@ -1,6 +1,48 @@
 {% include base_path %}
 
-{% if page.previous or page.next %}
+{% assign current_category = page.categories[0] %}
+
+{% assign category_posts = site.posts | where_exp: "post", "post.categories contains current_category" %}
+{% assign sorted_posts = category_posts | sort: "date" | reverse %}
+
+{% assign post_index = nil %}
+
+{% for post in sorted_posts %}
+  {% if post.url == page.url %}
+    {% assign post_index = forloop.index0 %}
+  {% endif %}
+{% endfor %}
+
+{% assign prev_index = post_index | plus: 1 %}
+{% assign next_index = post_index | minus: 1 %}
+
+{% assign total_posts = sorted_posts.size %}
+
+{% if prev_index < total_posts %}
+  {% assign prev_post = sorted_posts[prev_index] %}
+{% endif %}
+
+{% if next_index >= 0 %}
+  {% assign next_post = sorted_posts[next_index] %}
+{% endif %}
+
+{% if prev_post or next_post %}
+  <nav class="pagination">
+    {% if prev_post %}
+      <a href="{{ base_path }}{{ prev_post.url }}" class="pagination--pager" title="{{ prev_post.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
+    {% else %}
+      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
+    {% endif %}
+    {% if next_post %}
+      <a href="{{ base_path }}{{ next_post.url }}" class="pagination--pager" title="{{ next_post.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a>
+    {% else %}
+      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a>
+    {% endif %}
+  </nav>
+{% endif %}
+
+<!-- original code -->
+<!-- {% if page.previous or page.next %}
   <nav class="pagination">
     {% if page.previous %}
       <a href="{{ base_path }}{{ page.previous.url }}" class="pagination--pager" title="{{ page.previous.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
@@ -13,4 +55,4 @@
       <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a>
     {% endif %}
   </nav>
-{% endif %}
+{% endif %} -->

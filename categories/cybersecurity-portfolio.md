@@ -1,7 +1,7 @@
 ---
 layout: archive
-title: "Data Analysis Portfolio"
-permalink: /portfolios/data-analysis/
+title: "Cybersecurity Portfolio"
+permalink: /portfolios/cybersecurity/
 # category: data-analysis-portfolio
 # collection: data-analysis-portfolio
 ---
@@ -10,6 +10,6 @@ permalink: /portfolios/data-analysis/
 
 {% include base_path %}
 
-{% for post in site.data-analysis-portfolio %}
+{% for post in site.cybersecurity-portfolio %}
   {% include archive-single.html %}
 {% endfor %}

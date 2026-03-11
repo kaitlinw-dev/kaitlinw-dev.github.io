@@ -1,14 +1,14 @@
 ---
 layout: archive
-title: "Data Analysis Articles"
-permalink: /articles/data-analysis/
-category: data-analysis
+title: "Cybersecurity Articles"
+permalink: /articles/cybersecurity/
+category: cybersecurity
 ---
 
 <a href="/articles/" class="back-to-blog">Back to All Articles</a>
 
 {% include base_path %}
-{% for post in site.categories.data-analysis %}
+{% for post in site.categories.cybersecurity %}
   {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
   {% include archive-single.html %}
 {% endfor %}

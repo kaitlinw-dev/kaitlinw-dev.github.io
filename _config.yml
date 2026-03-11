@@ -234,9 +234,12 @@ collections:
   portfolio:
     output: true
     permalink: /:collection/:path/
+  cybersecurity-portfolio:
+    output: true
+    permalink: /:collection/:path/
   data-analysis-portfolio:
     output: true
-    permalinl: /:collection/:path/
+    permalink: /:collection/:path/
   talks:
     output: true
     permalink: /:collection/:path/
@@ -300,6 +303,14 @@ defaults:
   - scope:
       path: "" # empty = applies to the whole site
       type: data-analysis-portfolio  # your new collection
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comment: true
+  - scope:
+      path: "" # empty = applies to the whole site
+      type: cybersecurity-portfolio  # your new collection
     values:
       layout: single
       author_profile: true
