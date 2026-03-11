@@ -1,9 +1,10 @@
 ---
 layout: archive
 title: "Portfolio"
-permalink: /portfolio/
-author_profile: true
+permalink: /portfolios/data-analysis
 ---
+
+<a href="/portfolios/" class="back-to-portfolios">Back to All Portfolios</a>
 
 {% include base_path %}
 

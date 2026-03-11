@@ -4,7 +4,7 @@ layout: archive
 permalink: /blog/
 ---
 
-# Choose a blog category to explore posts:
+Choose a blog category to explore posts:
 
 <div class="blog-category-container">
 
