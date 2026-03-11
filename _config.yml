@@ -231,9 +231,12 @@ collections:
   publications:
     output: true
     permalink: /:collection/:path/
-  # portfolio:
-  #   output: true
-  #   permalink: /:collection/:path/
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
+  data-analysis-portfolio:
+    output: true
+    permalinl: /:collection/:path/
   talks:
     output: true
     permalink: /:collection/:path/
@@ -294,6 +297,14 @@ defaults:
       layout: talk
       author_profile: true
       share: true
+  - scope:
+      path: "" # empty = applies to the whole site
+      type: data-analysis-portfolio  # your new collection
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comment: true
 
 
 # Sass/SCSS
