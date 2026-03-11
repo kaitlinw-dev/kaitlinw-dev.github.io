@@ -4,7 +4,7 @@ layout: archive
 permalink: /portfolios/
 ---
 
-Choose a portfolio category to explore projects:
+<h1>Choose a portfolio category to explore projects:</h1>
 
 <div class="portfolio-category-container">
 
