@@ -536,6 +536,62 @@ article.page section.page__content p {
     margin-right: 0.5rem !important;
 }
 
-article.page .page__content h2 {
+article.page .page__content h2, h3 {
     margin-right: 0.5rem !important;
+}
+
+article.page .page__inner-wrap h3, hr {
+    margin-right: 0.5rem !important;
+}
+
+//* hover-to-reveal answer box - for articles*/
+.reveal-answer {
+    display: inline-block;
+    position: relative;
+
+    min-width: 20ch;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #2c2c44;
+    color: transparent; /* hide answer text */
+
+    border-radius: 6px;
+    padding: 0.2rem 0.5rem;
+
+    transition: all 0.25s ease;
+    cursor: pointer;
+    overflow: hidden; /* keeps overlay clean */
+}
+
+/* centered overlay text */
+.reveal-answer::after {
+    content: "Hover to reveal answer";
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 1rem;
+    color: #a6a1b2;
+    opacity: 0.85;
+
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+/* reveal effect */
+.reveal-answer:hover {
+    color: #ff79c6;
+    background: #1e1b2f;
+    box-shadow: 0 0 10px rgba(157,124,216,0.4);
+    text-shadow: 0 0 6px rgba(255,121,198,0.6);
+}
+
+/* hide overlay when revealed */
+.reveal-answer:hover::after {
+    opacity: 0;
 }

@@ -1,16 +1,16 @@
 ---
 title: "Getting Started with Linux: My First Commands and Lessons Learned"
-date: 2026-03-10
+date: 2026-03-11
 categories: [cybersecurity]
 ---
 
-This article explores setting up introductory cybersecurity learning environments and how to use them. 
+This article explores setting up introductory cybersecurity learning environments and how to navigate them using linux commands. 
 
 <h2>Introduction</h2>
 
 Learners new to the field of cybersecurity are faced with many tools and learning platforms to choose from. Without creating a plan to properly set up suitable learning environments for exploring these tools, learners can get overwhelmed.
 
-The goal of this article is to share the plan I created for setting up my cybersecurity learning environments and becomming familiar with some tools so that others can follow along as well. However, it is important to note that individual discretion must be applied as not all tools and/or platforms may be suitable for an individual's specific project or learning goals.
+The goal of this article is to share the plan I created for setting up my cybersecurity learning environments and becomming familiar with some tools and linux navigation so that others can follow along as well. However, it is important to note that individual discretion must be applied as not all tools and/or platforms may be suitable for an individual's specific project or learning goals.
 
 <h2>Tools Used</h2>
 
@@ -38,11 +38,7 @@ The goal of this article is to share the plan I created for setting up my cybers
 
     3.1. Although this information is available in many places, it may be helpful to follow a guided [tutorial](https://ryanstutorials.net/linuxtutorial/) that provides more in-depth information. 
 
-4. Explore networking basics: ping, ip addr
-
-    4.1. Although this information is also available in many places, it may again be helpful to follow a [tutorial](https://www.geeksforgeeks.org/computer-networks/computer-network-tutorials/) for more structured learning.
-
-5. Sign up for the [HackTheBox Linux Fundamentals lab](https://academy.hackthebox.com/course/preview/linux-fundamentals) or alternatively the [TryHackMe Linux Fundamentals Course](https://tryhackme.com/module/linux-fundamentals).
+4. Sign up for the [HackTheBox Linux Fundamentals lab](https://academy.hackthebox.com/course/preview/linux-fundamentals) or alternatively the [TryHackMe Linux Fundamentals Course](https://tryhackme.com/module/linux-fundamentals).
 
 <h2>Challenges & Lessons Learned </h2>
 
@@ -63,12 +59,6 @@ The goal of this article is to share the plan I created for setting up my cybers
     - pwd (print working directory): displays where you are currently located in your system.
 
     - chmod (change mode): modify file system permissions. 
-
-- Explore networking basics:
-
-    - ping: tests connectivity, measures round-trip time for packets traveling between devices and identifies packet losses as well as other issues. 
-
-    - ip addr: an identifying label for devices within a network and/or the internet.
 
 <h2>Next Steps</h2>
 
