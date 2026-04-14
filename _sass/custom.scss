@@ -540,7 +540,11 @@ article.page .page__content h2, h3 {
     margin-right: 0.5rem !important;
 }
 
-article.page .page__inner-wrap h3, hr {
+article.page .page__inner-wrap h3 {
+    margin-right: 0.5rem !important;
+}
+
+article.page .page__inner-wrap .page__content hr {
     margin-right: 0.5rem !important;
 }
 
