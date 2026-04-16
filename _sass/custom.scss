@@ -1263,11 +1263,28 @@ button:hover, .btn:hover {
         grid-template-columns: 1fr;
     }
 
+    .article_landing {
+        grid-template-columns: 1fr;
+    }
+
     .top-row {
         grid-template-columns: 1fr;
     }
 
+    .article-top-row {
+        grid-template-columns: 1fr;
+    }
+
     .card {
+        padding: 1.25rem;
+    }
+
+
+    .blog-category-card {
+        padding: 1.25rem;
+    }
+
+    .portfolio-category-card {
         padding: 1.25rem;
     }
 }
@@ -1281,29 +1298,16 @@ button:hover, .btn:hover {
     .card h2 {
         font-size: 0.95rem;
     }
-}
 
-/* For mobile/tablet devices, stack cards in a single column */
-@media (max-width: 900px) {
-    .blog-category-container {
-        grid-template-columns: 1fr; /* Stack cards in a single column */
-        gap: 1.2rem; /* Adjust the gap between items */
+     .blog-category-card {
+        border-radius: 14px;
+    }
+    
+    .portfolio-category-card {
+        border-radius: 14px;
     }
 }
 
-/* For even smaller mobile screens, adjust gap/padding more */
-@media (max-width: 600px) {
-    .blog-category-container {
-        grid-template-columns: 1fr; /* Single column for smaller devices */
-        gap: 1rem; /* Smaller gap between items */
-        padding: 0 1rem; /* Reduce padding */
-    }
-
-    /* Further tweak the card padding if needed */
-    .card {
-        padding: 1rem; /* Adjust card padding for smaller screens */
-    }
-}
 
 /* =============== blog category cards ===========*/
 .blog-category-container {
