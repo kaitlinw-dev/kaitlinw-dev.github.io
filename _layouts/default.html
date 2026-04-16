@@ -10,6 +10,13 @@ layout: compress
     {% include head.html %}
     {% include head/custom.html %}
   </head>
+  <script>
+  document.querySelectorAll('.reveal-answer').forEach(el => {
+    el.addEventListener('click', () => {
+      el.classList.toggle('is-revealed');
+      });
+    });
+  </script>
 
   <body>
 

@@ -1,0 +1,80 @@
+---
+layout: default
+---
+
+<div class="dashboard">
+
+    <div class="top-row">
+        <div class="card profile-card">
+            {% include author-profile.html %}
+        </div>
+        <div class="card nav-card">
+            <h2>Portfolio Areas</h2>
+            <p class="nav-sub">Quick Access - Select to Navigate</p>
+            <div class="nav-links">
+                <a href="./portfolios/cybersecurity/" class="card card-link">Cybersecurity Portfolio</a>
+                <a href="./portfolios/data-analysis/" class="card card-link">Data Analysis Portfolio</a>
+                <!-- <a href="/portfolio/" class="card-link">All Projects</a> -->
+                <!-- <a href="/research/" class="card-link">Research</a>
+                <a href="/blog/" class="card-link">Blog</a>
+                <a href="/cv/" class="card-link">CV</a> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="card about-card">
+        <h2>About Me</h2>
+        <p>Cybersecurity • Data Analysis • Systems Engineering </p>
+        <p>I am a recent Bachelor of Science in Computer Engineering & Bachelor of Science in Mathematics 
+            graduate passionate about cybersecurity, data analysis, and systems engineering. My portfolio 
+            showcases hands-on projects across several technical domains, including security, data analytics, 
+            and system design. Each project demonstrates my approach to problem solving, implementation, and 
+            technical documentation. </p>
+    </div>
+
+    <div class="card project-card">
+        <h2>Featured Project</h2>
+        {% include archive-single.html %}
+        <p>Coming Soon!</p>
+        <!-- <a href="./portfolios/cybersecurity/" class="card card-link">Cybersecurity Portfolio</a> -->
+    </div>
+
+    <!-- <div class="card project-card">
+
+        <div class="project-top">
+            <div class="project-icon">🧠</div>
+
+            <div>
+                <h3>AI Research Tool</h3>
+                <p>Exploring LLM evaluation methods</p>
+            </div>
+        </div>
+
+        <div class="project-meta">
+            <span>Python</span>
+            <span>ML</span>
+            <span>2026</span>
+        </div>
+
+        <a href="/project-link" class="card-link">View project →</a>
+
+    </div> -->
+
+    <!-- <div class="card project-card">
+        <h2>Featured Projects</h2>
+        {% include archive-single.html %}
+    </div> -->
+
+    <!-- <div class="card project-card">
+        <h2>Featured Projects</h2>
+        {% include archive-single.html %}
+    </div> -->
+
+    <div class="card skills-card">
+        <h2>Skills</h2>
+        <p>Cybersecurity<br>TBA</p>
+        <p>Data Analysis<br>Python</p>
+        <p>Systems Engineering<br>TBA</p>
+    </div>
+
+</div>
