@@ -10,13 +10,22 @@ layout: compress
     {% include head.html %}
     {% include head/custom.html %}
   </head>
-  <script>
+  <!-- <script>
   document.querySelectorAll('.reveal-answer').forEach(el => {
     el.addEventListener('click', () => {
       el.classList.toggle('is-revealed');
       });
     });
-  </script>
+  </script> -->
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".reveal-answer").forEach(el => {
+    el.addEventListener("click", function () {
+      this.classList.toggle("is-revealed");
+    });
+  });
+});
+</script>
 
   <body>
 

@@ -260,13 +260,13 @@ Command used: `useradd --help`
 
 Command used: `usermod --help`
 
-**Answer:** <span class="reveal-answer">--lock</span>
+**Answer:** <span class="reveal-answer">\-\-lock</span>
 
 **Question 2:** Which option needs to be set to execute a command as a different user using the "su" command? (long version of the option)
 
 Command used: `su --help`
 
-**Answer:** <span class="reveal-answer">--command</span>
+**Answer:** <span class="reveal-answer">\-\-command</span>
 
 <h3>Section 17: Service and Process Management</h3>
 
