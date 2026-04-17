@@ -1960,7 +1960,7 @@ code.language-plaintext.highlighter-rouge {
 // }
 
 /* ==============================
-   TAP / HOVER REVEAL (FIXED)
+   TAP / HOVER REVEAL (FIXED + CLEAN)
 ============================== */
 
 .reveal-answer {
@@ -1982,9 +1982,9 @@ code.language-plaintext.highlighter-rouge {
     user-select: none;
 }
 
-/* default overlay text (always consistent) */
+/* DEFAULT (DESKTOP TEXT) */
 .reveal-answer::after {
-    content: "Tap to reveal";
+    content: "Tap or hover to reveal";
     position: absolute;
 
     top: 50%;
@@ -1999,7 +1999,7 @@ code.language-plaintext.highlighter-rouge {
     white-space: nowrap;
 }
 
-/* reveal state */
+/* REVEALED STATE */
 .reveal-answer.is-revealed {
     color: #ff79c6;
     background: #1e1b2f;
@@ -2007,12 +2007,11 @@ code.language-plaintext.highlighter-rouge {
     text-shadow: 0 0 6px rgba(255,121,198,0.6);
 }
 
-/* hide overlay when revealed */
 .reveal-answer.is-revealed::after {
     opacity: 0;
 }
 
-/* hover behavior ONLY for devices that actually support hover */
+/* DESKTOP HOVER ONLY */
 @media (hover: hover) and (pointer: fine) {
     .reveal-answer:hover {
         color: #ff79c6;
@@ -2026,7 +2025,14 @@ code.language-plaintext.highlighter-rouge {
     }
 }
 
-/* mobile sizing fix */
+/* MOBILE OVERRIDE (ONLY TEXT CHANGE) */
+@media (hover: none) and (pointer: coarse) {
+    .reveal-answer::after {
+        content: "Tap to reveal";
+    }
+}
+
+/* small screens fix */
 @media (max-width: 384px) {
     .reveal-answer {
         width: 100%;
