@@ -1875,6 +1875,94 @@ code.language-plaintext.highlighter-rouge {
 
 //* hover-to-reveal or click-to-reveal answer box - for articles*/
 /* hover + click/tap reveal system */
+// .reveal-answer {
+//     display: inline-flex;
+//     justify-content: center;
+//     align-items: center;
+
+//     min-width: 20ch;
+//     padding: 0.2rem 0.5rem;
+
+//     border-radius: 6px;
+//     background: #2c2c44;
+//     color: transparent;
+
+//     position: relative;
+//     cursor: pointer;
+
+//     transition: all 0.25s ease;
+//     user-select: none; /* ✅ prevents text highlight */
+
+//     letter-spacing: normal;
+
+//     // max-width: 100%;    
+//     // flex-wrap: wrap;
+// }
+
+// /* overlay label */
+// .reveal-answer::after {
+//     content: "Tap or hover to reveal";
+//     position: absolute;
+
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+
+//     font-size: 1rem;
+//     color: #a6a1b2;
+//     opacity: 0.85;
+
+//     pointer-events: none;
+//     white-space: nowrap;
+
+//     // max-width: 90%;            /* ✅ ADD */
+//     // text-align: center;        /* ✅ ADD */
+//     // white-space: normal;
+// }
+
+// /* reveal on hover (desktop) */
+// // .reveal-answer:hover,
+// // .reveal-answer.is-revealed {
+// //     color: #ff79c6;
+// //     background: #1e1b2f;
+// //     box-shadow: 0 0 10px rgba(157,124,216,0.4);
+// //     text-shadow: 0 0 6px rgba(255,121,198,0.6);
+// // }
+
+// @media (hover: hover) and (pointer: fine) {
+//     .reveal-answer:hover {
+//         color: #ff79c6;
+//         background: #1e1b2f;
+//         box-shadow: 0 0 10px rgba(157,124,216,0.4);
+//         text-shadow: 0 0 6px rgba(255,121,198,0.6);
+//     }
+
+//     .reveal-answer:hover::after {
+//         opacity: 0;
+//     }
+// }
+
+// .reveal-answer.is-revealed {
+//     color: #ff79c6;
+//     background: #1e1b2f;
+//     box-shadow: 0 0 10px rgba(157,124,216,0.4);
+//     text-shadow: 0 0 6px rgba(255,121,198,0.6);
+// }
+
+// .reveal-answer.is-revealed::after {
+//     opacity: 0;
+// }
+
+// /* hide overlay when revealed */
+// .reveal-answer:hover::after,
+// .reveal-answer.is-revealed::after {
+//     opacity: 0;
+// }
+
+/* ==============================
+   TAP / HOVER REVEAL (FIXED)
+============================== */
+
 .reveal-answer {
     display: inline-flex;
     justify-content: center;
@@ -1891,17 +1979,12 @@ code.language-plaintext.highlighter-rouge {
     cursor: pointer;
 
     transition: all 0.25s ease;
-    user-select: none; /* ✅ prevents text highlight */
-
-    letter-spacing: normal;
-
-    // max-width: 100%;    
-    // flex-wrap: wrap;
+    user-select: none;
 }
 
-/* overlay label */
+/* default overlay text (always consistent) */
 .reveal-answer::after {
-    content: "Tap or hover to reveal";
+    content: "Tap to reveal";
     position: absolute;
 
     top: 50%;
@@ -1914,21 +1997,22 @@ code.language-plaintext.highlighter-rouge {
 
     pointer-events: none;
     white-space: nowrap;
-
-    // max-width: 90%;            /* ✅ ADD */
-    // text-align: center;        /* ✅ ADD */
-    // white-space: normal;
 }
 
-/* reveal on hover (desktop) */
-// .reveal-answer:hover,
-// .reveal-answer.is-revealed {
-//     color: #ff79c6;
-//     background: #1e1b2f;
-//     box-shadow: 0 0 10px rgba(157,124,216,0.4);
-//     text-shadow: 0 0 6px rgba(255,121,198,0.6);
-// }
+/* reveal state */
+.reveal-answer.is-revealed {
+    color: #ff79c6;
+    background: #1e1b2f;
+    box-shadow: 0 0 10px rgba(157,124,216,0.4);
+    text-shadow: 0 0 6px rgba(255,121,198,0.6);
+}
 
+/* hide overlay when revealed */
+.reveal-answer.is-revealed::after {
+    opacity: 0;
+}
+
+/* hover behavior ONLY for devices that actually support hover */
 @media (hover: hover) and (pointer: fine) {
     .reveal-answer:hover {
         color: #ff79c6;
@@ -1942,21 +2026,12 @@ code.language-plaintext.highlighter-rouge {
     }
 }
 
-.reveal-answer.is-revealed {
-    color: #ff79c6;
-    background: #1e1b2f;
-    box-shadow: 0 0 10px rgba(157,124,216,0.4);
-    text-shadow: 0 0 6px rgba(255,121,198,0.6);
-}
-
-.reveal-answer.is-revealed::after {
-    opacity: 0;
-}
-
-/* hide overlay when revealed */
-.reveal-answer:hover::after,
-.reveal-answer.is-revealed::after {
-    opacity: 0;
+/* mobile sizing fix */
+@media (max-width: 384px) {
+    .reveal-answer {
+        width: 100%;
+        min-width: unset;
+    }
 }
 
 @media (max-width: 384px) {
@@ -1966,11 +2041,11 @@ code.language-plaintext.highlighter-rouge {
     }
 }
 
-@media (hover: none) {
-    .reveal-answer::after {
-        content: "Tap to reveal";
-    }
-}
+// @media (hover: none) {
+//     .reveal-answer::after {
+//         content: "Tap to reveal";
+//     }
+// }
 
 /* For mobile, make it one column */
 @media (max-width: 768px) {
