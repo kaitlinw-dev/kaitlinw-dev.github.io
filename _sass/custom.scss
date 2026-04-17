@@ -795,6 +795,12 @@ p {
     text-shadow: 0 0 8px rgba(157,124,216,0.35); /*makes posts by category tag glow*/
 }
 
+.page__content a,
+.archive__item a {
+    word-break: break-word;      /* ✅ allows breaking long URLs */
+    overflow-wrap: anywhere;     /* ✅ modern fix (better than break-word alone) */
+}
+
 a {
     color: var(--accent1);
     transition: all 0.25s ease;
@@ -1020,6 +1026,8 @@ button:hover, .btn:hover {
     flex-direction: column;
     gap: 0.6rem;
     margin-top: 0.75rem;
+
+    padding: 0 1rem;
 }
 
 .nav-card .card-link {
@@ -1037,6 +1045,10 @@ button:hover, .btn:hover {
     text-decoration: none;
 
     transition: all 0.2s ease;
+
+    width: 100%;            /* ✅ ADD */
+    box-sizing: border-box; /* ✅ ADD */
+    margin-bottom: 0.5rem;
 }
 
 //hover glow dark theme
@@ -1103,10 +1115,12 @@ button:hover, .btn:hover {
 
     transition: all 0.2s ease;
 
-    margin-left: 1.5rem !important;
-    margin-right: 1.5rem !important;
-    padding-left: 0.5rem !important;
-    padding-right: 0.5rem !important;
+    // margin-left: 1.5rem !important;
+    // margin-right: 1.5rem !important;
+    // padding-left: 0.5rem !important;
+    // padding-right: 0.5rem !important;
+    margin: 0;                 /* ✅ FIX */
+    padding: 0.6rem 0.75rem;  /* ✅ CLEAN SPACING */
 }
 
 .card-link:hover {
@@ -1395,9 +1409,9 @@ button:hover, .btn:hover {
     }
 
     .nav-card .card-link {
-        width: fit-content;
-        min-width: 90%;
-        max-width: 90%;
+        // width: fit-content;
+        // min-width: 90%;
+        // max-width: 90%;
         border-color: rgba(139, 92, 246, 0.85);
         color: var(--accent2);
     }
@@ -1441,9 +1455,9 @@ button:hover, .btn:hover {
     }
 
     .nav-card .card-link {
-        width: fit-content;
-        min-width: 90%;
-        max-width: 90%;
+        // width: fit-content;
+        // min-width: 90%;
+        // max-width: 90%;
         border-color: rgba(139, 92, 246, 0.85);
         color: var(--accent2);
     }
@@ -1521,6 +1535,23 @@ button:hover, .btn:hover {
         margin-left: 2rem !important;
         margin-right: 2rem !important;
     }
+
+    .page__content,
+    .archive {
+        // overflow-x: hidden;   /* ✅ prevents layout from expanding */
+        word-wrap:break-word;
+    }
+
+    pre {
+        max-width: 100%;
+        overflow-x: auto;     /* ✅ ensures scroll instead of overflow */
+    }
+
+    code {
+        word-break: break-word;
+        overflow-wrap: anywhere;
+    }
+    
 }
 
 //tablet size
@@ -1801,6 +1832,9 @@ code {
     color: #ff79c6;
     font-family: monospace;
     font-size: 1.25em;
+
+    word-break: break-word;      /* ✅ ADD */
+    overflow-wrap: anywhere;     /* ✅ ADD */
 }
 
 pre > code {
@@ -1826,6 +1860,7 @@ pre {
     text-indent: -0.75rem;   /* pull text to the left */
     padding-left: 0.25rem;   /* keep overall padding consistent */
     overflow-x: auto; /* ✅ allow scrolling */
+    
 }
 
 code.language-plaintext.highlighter-rouge {
@@ -1859,6 +1894,9 @@ code.language-plaintext.highlighter-rouge {
     user-select: none; /* ✅ prevents text highlight */
 
     letter-spacing: normal;
+
+    // max-width: 100%;    
+    // flex-wrap: wrap;
 }
 
 /* overlay label */
@@ -1876,10 +1914,34 @@ code.language-plaintext.highlighter-rouge {
 
     pointer-events: none;
     white-space: nowrap;
+
+    // max-width: 90%;            /* ✅ ADD */
+    // text-align: center;        /* ✅ ADD */
+    // white-space: normal;
 }
 
 /* reveal on hover (desktop) */
-.reveal-answer:hover,
+// .reveal-answer:hover,
+// .reveal-answer.is-revealed {
+//     color: #ff79c6;
+//     background: #1e1b2f;
+//     box-shadow: 0 0 10px rgba(157,124,216,0.4);
+//     text-shadow: 0 0 6px rgba(255,121,198,0.6);
+// }
+
+@media (hover: hover) and (pointer: fine) {
+    .reveal-answer:hover {
+        color: #ff79c6;
+        background: #1e1b2f;
+        box-shadow: 0 0 10px rgba(157,124,216,0.4);
+        text-shadow: 0 0 6px rgba(255,121,198,0.6);
+    }
+
+    .reveal-answer:hover::after {
+        opacity: 0;
+    }
+}
+
 .reveal-answer.is-revealed {
     color: #ff79c6;
     background: #1e1b2f;
@@ -1887,10 +1949,21 @@ code.language-plaintext.highlighter-rouge {
     text-shadow: 0 0 6px rgba(255,121,198,0.6);
 }
 
+.reveal-answer.is-revealed::after {
+    opacity: 0;
+}
+
 /* hide overlay when revealed */
 .reveal-answer:hover::after,
 .reveal-answer.is-revealed::after {
     opacity: 0;
+}
+
+@media (max-width: 384px) {
+    .reveal-answer {
+        width: 100%;        /* ✅ makes it behave like a block */
+        min-width: unset;   /* ✅ prevents forced overflow */
+    }
 }
 
 @media (hover: none) {
