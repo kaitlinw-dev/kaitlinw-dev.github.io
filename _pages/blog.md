@@ -4,21 +4,48 @@ layout: default
 permalink: /articles/
 ---
 
-<h1 class="page__title">Choose a category to explore articles:</h1>
+<h1 class="page__title">Articles</h1>
+<p class="page__subtitle">Filter by topic or scroll to browse all posts.</p>
 
-<div class="article_landing">
+<div class="blog-category-container">
 
-<div class="article-top-row">
+  <!-- MOBILE DROPDOWN -->
+  <details class="blog-filter-dropdown">
+    <summary class="btn">Filter Posts</summary>
 
-<a href="/articles/cybersecurity/" class="blog-category-card">
-<h2>Cybersecurity</h2>
-<p>Read all articles related to my cybersecurity projects and insights.</p>
-</a>
+    <div class="dropdown-content">
+      <a href="/articles/" class="dropdown-item">All</a>
 
-<a href="/articles/data-analysis/" class="blog-category-card">
-<h2>Data Analysis</h2>
-<p>Read all articles related to my data analysis projects and insights.</p>
-</a>
+      <a href="/articles/cybersecurity/" class="dropdown-item">Cybersecurity</a>
+      <a href="/articles/data-analysis/" class="dropdown-item">Data Analysis</a>
+
+    </div>
+  </details>
+
+  <!-- DESKTOP BUTTONS -->
+  <div class="blog-filter-buttons">
+
+    <a href="/articles/cybersecurity/" class="blog-category-card">
+      <h2>Cybersecurity</h2>
+    </a>
+
+    <a href="/articles/data-analysis/" class="blog-category-card">
+      <h2>Data Analysis</h2>
+    </a>
+
+  </div>
+
 </div>
 
+<div class="blog-landing">
+  {% include group-by-array collection=site.posts field="categories" %}
+
+  {% for category in group_names %}
+    {% assign posts = group_items[forloop.index0] %}
+    <h2 id="{{ category | slugify }}" class="archive__subtitle">{{ category }}</h2>
+
+    {% for post in posts %}
+      {% include archive-single.html %}
+    {% endfor %}
+  {% endfor %}
 </div>
