@@ -737,7 +737,7 @@ body .page__inner-wrap {
 }
 
 article.page {
-    background: rgba(255,255,255,0.04) !important;
+    // background: rgba(255,255,255,0.04) !important;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     padding-right: 2rem !important;
@@ -1409,10 +1409,17 @@ button:hover, .btn:hover {
         background: var(--bg) !important; /* ✅ prevents white flash */
     }
 
-    //original styling
-    .card,
-    .archive__item,
-    article.page {
+    //original styling - use this to fix across site
+    // .card,
+    // .archive__item,
+    // article.page {
+    //     background: rgba(255,255,255,0.04) !important;
+    //     // background: rgba(20,20,35,0.85) !important; /* ✅ fallback when blur fails */
+    //     backdrop-filter: none !important;
+    //     -webkit-backdrop-filter: none !important;
+    // }
+
+    .card {
         background: rgba(255,255,255,0.04) !important;
         // background: rgba(20,20,35,0.85) !important; /* ✅ fallback when blur fails */
         backdrop-filter: none !important;
@@ -1664,9 +1671,7 @@ button:hover, .btn:hover {
 
 //tablet size
 @media (max-width: 900px) {
-    .card,
-    .archive__item,
-    article.page {
+    .card {
         background: rgba(255,255,255,0.04) !important;
         // background: rgba(20,20,35,0.85) !important; /* ✅ fallback when blur fails */
         backdrop-filter: none !important;
