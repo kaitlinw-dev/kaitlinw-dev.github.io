@@ -521,7 +521,7 @@ button:hover, .btn:hover {
     border: 1px solid rgba(255,255,255,0.05);
     border-radius: 12px;
 
-    color: rgba(229,231,255,0.85);
+    // color: rgba(229,231,255,0.85);
     text-decoration: none;
 
     transition: all 0.2s ease;
@@ -529,6 +529,10 @@ button:hover, .btn:hover {
     width: 100%;            /* ✅ ADD */
     box-sizing: border-box; /* ✅ ADD */
     margin-bottom: 0.5rem;
+}
+
+.nav-card .card-link {
+    background: transparent !important;
 }
 
 //hover glow dark theme
