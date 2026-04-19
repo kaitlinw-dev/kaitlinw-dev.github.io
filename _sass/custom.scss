@@ -224,6 +224,14 @@ article.page .page__content {
     box-sizing: border-box;
 }
 
+#main {
+    flex: 1 0 auto;   /* ✅ pushes footer down */
+}
+
+.page__footer {
+    flex-shrink: 0;   /* ✅ prevents overlap */
+}
+
 /* =====================================================
    TYPOGRAPHY
 ===================================================== */
@@ -723,6 +731,9 @@ button:hover, .btn:hover {
     display: flex;
     flex-direction: column;
     align-items: flex-start; /* important */
+    position: relative;
+    z-index: 10; /* must be higher than cards */
+    overflow: visible !important;
 }
 
 .profile-card .author__avatar {
@@ -733,7 +744,7 @@ button:hover, .btn:hover {
 .profile-card .author__urls-wrapper {
     // margin-left: 0.5rem !important;
     padding-left: 1.5rem !important;
-    // z-index: 1000;
+    z-index: 100 !important;
 }
 
 .profile-card 
@@ -797,7 +808,7 @@ button:hover, .btn:hover {
    TABLET FIX (background fallback)
 ===================================================== */
 
-@media (max-width: 1024px) {
+@media (max-width: 1210px) {
     // body {
     //     background: var(--bg) !important; /* ✅ prevents white flash */
     // }
@@ -881,7 +892,7 @@ button:hover, .btn:hover {
     }
 
     .blog-landing .archive__subtitle {
-        max-width: 100%;
+        max-width: 100% !important;
         margin-left: 1rem !important;
         margin-right: 1rem !important;
         margin-top: 0.75rem !important;
@@ -903,6 +914,9 @@ button:hover, .btn:hover {
     }
     .article-card {
         grid-template-columns: 1fr;
+    }
+    .nav-card {
+        z-index: 0 !important;
     }
 }
 
@@ -959,6 +973,7 @@ button:hover, .btn:hover {
     .nav-card {
         padding-bottom: 0.5rem !important;
         background: transparent !important;
+        z-index: 0 !important;
     }
 
     .profile-card {
@@ -969,6 +984,13 @@ button:hover, .btn:hover {
     .author__urls.social-icons {
         left: 5px;
         right: -50px;
+        // position: relative;  
+        z-index: 9999 !important;
+        position: absolute;
+        top: 100%;          /* places it just below avatar/card header */
+        // left: 0;
+        // z-index: 9999;
+
     }
 
     a.page__taxonomy-item {
@@ -1058,14 +1080,16 @@ button:hover, .btn:hover {
     //     -webkit-backdrop-filter: none !important;
     // }
 
-    // .card,
-    // .archive__item,
-    // article.page {
-    //     background: rgba(255,255,255,0.04) !important;
-    //     // background: rgba(20,20,35,0.85) !important; /* ✅ fallback when blur fails */
-    //     backdrop-filter: none !important;
-    //     -webkit-backdrop-filter: none !important;
-    // }
+    .card,
+    .archive__item,
+    article.page {
+        // background: rgba(255,255,255,0.04) !important;
+        // // background: rgba(20,20,35,0.85) !important; /* ✅ fallback when blur fails */
+        // backdrop-filter: none !important;
+        // -webkit-backdrop-filter: none !important;
+        position: relative;
+        z-index: 1;
+    }
     .dashboard {
         grid-template-columns: 1fr;
     }
@@ -1132,6 +1156,10 @@ button:hover, .btn:hover {
     .article-card {
         grid-template-columns: 1fr;
     }
+
+    .nav-card {
+        z-index: 0 !important;
+    }
 }
 
 //mobile size
@@ -1150,6 +1178,9 @@ button:hover, .btn:hover {
     
     .portfolio-category-card {
         border-radius: 14px;
+    }
+    .nav-card {
+        z-index: 0 !important;
     }
 }
 
@@ -1609,6 +1640,9 @@ code.language-plaintext.highlighter-rouge {
     .article-card {
         grid-template-columns: 1fr;
     }
+    .nav-card {
+        z-index: 0 !important;
+    }
 }
 
 /* For mobile, make it one column */
@@ -1637,6 +1671,15 @@ code.language-plaintext.highlighter-rouge {
     pre {
         font-size: 0.85rem;
         white-space: pre; /* prevent weird wrapping */
+    }
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+    .card,
+    .archive__item,
+    article.page {
+        backdrop-filter: none !important;
+        background: rgba(20,20,35,0.85) !important;
     }
 }
 
