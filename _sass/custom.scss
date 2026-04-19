@@ -800,10 +800,10 @@ button:hover, .btn:hover {
    TABLET FIX (background fallback)
 ===================================================== */
 
-@media (max-width: 1210px) {
-    // body {
-    //     background: var(--bg) !important; /* ✅ prevents white flash */
-    // }
+@media (max-width: 1024px) {
+    body {
+        background: var(--bg) !important; /* ✅ prevents white flash */
+    }
 
     //original styling - use this to fix across site
     // .card,
@@ -884,7 +884,7 @@ button:hover, .btn:hover {
     }
 
     .blog-landing .archive__subtitle {
-        max-width: 100% !important;
+        max-width: 100%;
         margin-left: 1rem !important;
         margin-right: 1rem !important;
         margin-top: 0.75rem !important;
@@ -1665,15 +1665,6 @@ code.language-plaintext.highlighter-rouge {
         white-space: pre; /* prevent weird wrapping */
     }
 }
-
-// @supports not (backdrop-filter: blur(10px)) {
-//     .card,
-//     .archive__item,
-//     article.page {
-//         backdrop-filter: none !important;
-//         background: rgba(20,20,35,0.85) !important;
-//     }
-// }
 
 /* =====================================================
    NAVBAR CLEANUP
