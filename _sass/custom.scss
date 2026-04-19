@@ -224,14 +224,6 @@ article.page .page__content {
     box-sizing: border-box;
 }
 
-#main {
-    flex: 1 0 auto;   /* ✅ pushes footer down */
-}
-
-.page__footer {
-    flex-shrink: 0;   /* ✅ prevents overlap */
-}
-
 /* =====================================================
    TYPOGRAPHY
 ===================================================== */
@@ -1674,14 +1666,14 @@ code.language-plaintext.highlighter-rouge {
     }
 }
 
-@supports not (backdrop-filter: blur(10px)) {
-    .card,
-    .archive__item,
-    article.page {
-        backdrop-filter: none !important;
-        background: rgba(20,20,35,0.85) !important;
-    }
-}
+// @supports not (backdrop-filter: blur(10px)) {
+//     .card,
+//     .archive__item,
+//     article.page {
+//         backdrop-filter: none !important;
+//         background: rgba(20,20,35,0.85) !important;
+//     }
+// }
 
 /* =====================================================
    NAVBAR CLEANUP
