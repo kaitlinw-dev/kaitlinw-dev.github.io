@@ -1564,23 +1564,23 @@ code.language-plaintext.highlighter-rouge {
 
 
 
-/* DESKTOP HOVER ONLY */
-@media (hover: hover) and (pointer: fine) {
-    .reveal-answer:hover {
-        color: #ff79c6;
-        // background: #d8d8d826;
+// /* DESKTOP HOVER ONLY */
+// @media (hover: hover) and (pointer: fine) {
+//     .reveal-answer:hover {
+//         color: #ff79c6;
+//         // background: #d8d8d826;
         
-        // background: #2f2534;
-        background: black;
-        // background: #1e1b2f;
-        box-shadow: 0 0 10px rgba(157,124,216,0.4);
-        text-shadow: 0 0 6px rgba(255,121,198,0.6);
-    }
+//         // background: #2f2534;
+//         background: black;
+//         // background: #1e1b2f;
+//         box-shadow: 0 0 10px rgba(157,124,216,0.4);
+//         text-shadow: 0 0 6px rgba(255,121,198,0.6);
+//     }
 
-    .reveal-answer:hover::after {
-        opacity: 0;
-    }
-}
+//     .reveal-answer:hover::after {
+//         opacity: 0;
+//     }
+// }
 
 /* MOBILE OVERRIDE (ONLY TEXT CHANGE) */
 @media (hover: none) and (pointer: coarse) {
