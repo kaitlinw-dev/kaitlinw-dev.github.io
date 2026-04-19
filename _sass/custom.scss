@@ -801,9 +801,9 @@ button:hover, .btn:hover {
 ===================================================== */
 
 @media (max-width: 1024px) {
-    body {
-        background: var(--bg) !important; /* ✅ prevents white flash */
-    }
+    // body {
+    //     background: var(--bg) !important; /* ✅ prevents white flash */
+    // }
 
     //original styling - use this to fix across site
     // .card,
