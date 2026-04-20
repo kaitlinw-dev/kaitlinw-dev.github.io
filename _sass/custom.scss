@@ -889,9 +889,15 @@ button:hover, .btn:hover {
 
     .blog-landing .archive__subtitle {
         max-width: 100%;
-        margin-left: 1rem !important;
-        margin-right: 1rem !important;
+        // margin-left: 1rem !important;
+        // margin-right: 1rem !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
         margin-top: 0.75rem !important;
+    }
+
+    .archive__subtitle {
+        border-bottom: 1px solid white;
     }
     
     .blog-category-container {
