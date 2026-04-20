@@ -831,8 +831,15 @@ button:hover, .btn:hover {
     //     -webkit-backdrop-filter: none !important;
     // }
 
-    .dashboard {
-        grid-template-columns: 1fr;
+    .dashboard,
+    .article_landing,
+    .top-row,
+    .article-top-row {
+        grid-template-columns: 1fr !important;
+    }
+
+    .page {
+        width: 100% !important;
     }
 
     .greedy-nav .hidden-links {
@@ -883,15 +890,21 @@ button:hover, .btn:hover {
 
     .blog-landing .archive__item {
         max-width: 100%;
-        padding-left: 1rem;
-        padding-right: 1rem;
+        // padding-left: 1rem;
+        // padding-right: 1rem;
     }
 
     .blog-landing .archive__subtitle {
         max-width: 100%;
-        margin-left: 1rem !important;
-        margin-right: 1rem !important;
+        // margin-left: 1rem !important;
+        // margin-right: 1rem !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
         margin-top: 0.75rem !important;
+    }
+
+    .archive__subtitle {
+        border-bottom: 1px solid white !important;
     }
     
     .blog-category-container {
@@ -1120,8 +1133,8 @@ button:hover, .btn:hover {
 
     .blog-landing .archive__item {
         max-width: 100%;
-        padding-left: 1rem;
-        padding-right: 1rem;
+        // padding-left: 1rem;
+        // padding-right: 1rem;
     }
 
     .blog-landing .archive__subtitle {
@@ -1184,11 +1197,27 @@ button:hover, .btn:hover {
 
     .blog-category-card {
         // transform: translateY(-6px);
-        border-color: #8d7cd8;
+        border-color: #8d7cd8 !important;
+        // border: 1px solid rgba(139,92,246,0.4);
+        // box-shadow: 0 0 14px rgba(157,124,216,0.35);
+        text-decoration: none !important;
+    }
+    .blog-category-card h2 {
+        color: #ff79c6;
+        text-shadow: 0 0 6px rgba(255,121,198,0.6);
+    }
+
+    .portfolio-category-card {
+        border-color: #8d7cd8 !important;
+        // border: 1px solid rgba(139,92,246,0.4);
         // box-shadow: 0 0 14px rgba(157,124,216,0.35);
         text-decoration: none !important;
     }
 
+    .portfolio-category-card h2 {
+        color: #ff79c6;
+        text-shadow: 0 0 6px rgba(255,121,198,0.6);
+    }
 }
 
 .blog-landing .archive__item {
