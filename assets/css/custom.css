@@ -503,6 +503,17 @@ hr {
         margin-bottom: 129px !important;
     }
 
+    .dashboard,
+    .article_landing,
+    .top-row,
+    .article-top-row {
+        grid-template-columns: 1fr !important;
+    }
+
+    .page {
+        width: 100% !important;
+    }
+
     .page__footer::before {
         content: "";
         position: absolute;
@@ -514,7 +525,7 @@ hr {
         border-top: 1px solid white !important;
         z-index: 2;
     }
-    /* .archive__subtitle {
+    .archive__subtitle {
         margin-left: auto !important;
         margin-right: auto !important;
         border-bottom: 1px solid white !important;
@@ -523,5 +534,5 @@ hr {
         margin-left: auto !important;
         margin-right: auto !important;
         margin-top: 0.75rem !important;
-    } */
+    }
 }
