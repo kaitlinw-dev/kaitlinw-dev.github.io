@@ -514,4 +514,14 @@ hr {
         border-top: 1px solid white !important;
         z-index: 2;
     }
+    /* .archive__subtitle {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        border-bottom: 1px solid white !important;
+    }
+    .blog-landing .archive__subtitle {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-top: 0.75rem !important;
+    } */
 }
