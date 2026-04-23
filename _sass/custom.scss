@@ -1427,6 +1427,22 @@ pre {
     
 }
 
+.table-wrapper {
+    overflow-x: auto;   /* enables horizontal scroll */
+    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+}
+
+.table-wrapper table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 600px; /* optional: prevents squishing */
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+    overflow-x: auto !important;
+    padding: 0.5rem;
+}
+
 code.language-plaintext.highlighter-rouge {
     padding-right: 0;
     padding-left: 0 !important;

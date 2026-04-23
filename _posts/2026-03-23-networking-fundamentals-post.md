@@ -34,6 +34,8 @@ For instance, say you want to visit a friend for lunch at their large office bui
 
 The subnet mask (or netmask) of an IPv4 address is also 32 bits long and it is used to determine which bits of the address are the network bits and which ones are the host bits. If the subnet mask is specified, the host bits are determined using this. The subnet mask of the IP address is specified by the "slash part" that appears at the end of the IP address. For instance in the IP 192.0.0.1/24, it is the /24 part that is in Classless Inter-Domain Routing (CIDR) notation, which specifies the subnet mask in a concise form. The entire subnetmask for this IP would then look like 255.255.255.0. If the subnet mask is not specified, it can be easily obtained by using an IP class table, such as the one below, which is a tool that displays the divisions of IP network blocks and the relevant information regarding those divisions:
 
+<div class="table-wrapper" markdown="1">
+
 | Class	| Network Address | First Address | Last Address | Subnetmask | CIDR | Subnets | IPs |
 | ----- | --------------- | ------------- | ------------ | ---------- | ---- | ------- | --- |
 | A	| 1.0.0.0 | 1.0.0.1	| 127.255.255.255 | 255.0.0.0 |	/8 | 127 | 16,777,214 + 2 | 
@@ -41,6 +43,8 @@ The subnet mask (or netmask) of an IPv4 address is also 32 bits long and it is u
 | C	| 192.0.0.0	| 192.0.0.1	| 223.255.255.255 | 255.255.255.0 | /24 | 2,097,152 | 254 + 2 |
 | D	| 224.0.0.0	| 224.0.0.1	| 239.255.255.255 | Multicast |	Multicast |	Multicast |	Multicast |
 | E | 240.0.0.0	| 240.0.0.1	| 255.255.255.255 |	reserved |	reserved |	reserved | reserved |
+
+</div>
 
 **Important Note:** In every network, there are two IP addresses that are specially reserved and cannot be used to assign to devices. These addresses are always the first and last ones in the network. The first address is called the network address and is used to identify the network itself by routers. The last address is called the broadcast address and is used to connect all of the devices in the network to each other so that it can send messages to every device at once. 
 
@@ -52,17 +56,17 @@ The following examples will demonstrate the steps for how to calculate the corre
 
 **Example 1:** Given IP address: 192.168.1.0/26
 
-Step 1: Calculate the number of host bits: $$32-26=6$$
+Step 1: Calculate the number of host bits: 32-26=6
 
 We have 32 total bits (because it is an IPv4 address), and we are given /26, meaning we have 26 network bits. This means, the rest of the bits are the host bits. In this case, we have 6 host bits. 
 
 Step 2: Calculate the subnet mask
 
-In binary, this subnet mask is: $$11111111.11111111.11111111.11000000$$
+In binary, this subnet mask is: 11111111.11111111.11111111.11000000
 
 Notice how from left to right we fill in the 1s corresponding to the /26 i.e. there are 26 1s. The last bits are 0s which there are 6 of, corresponding to the host bits. 
 
-Next, convert the subnet mask to decimal form: $$255.255.255.192$$
+Next, convert the subnet mask to decimal form: 255.255.255.192
 
 To convert each octet from binary to decimal, you must do the following:
 
@@ -78,57 +82,63 @@ $$1*2^{7} + 1*2^{6} + 0*2^{5} + 0*2^{4} + 0*2^{3} + 0*2^{2} + 0*2^{1} + 0*2^{0}$
 
 $$128 + 64 + 0 + 0 + 0 + 0 + 0 + 0 = 192$$
 
-When you put them all together you get: $$255.255.255.192$$
+When you put them all together you get: 255.255.255.192
 
 Step 3: Calculate the number of hosts per subnet
 
-General formula: $$2^{\text{number of host bits}}-2$$
+General formula:
+
+$$2^{\text{number of host bits}}-2$$
+
+Calculate:
 
 $$2^{6}-2 = 64-2 = 62$$
 
 This means that we have 62 usable IP addresses in this network.
 
-Step 4: Calculate the size of each subnet: $$256-192=64$$
+Step 4: Calculate the size of each subnet: 256-192=64
 
 Step 5: List each subnet
 
-$$192.168.1.0$$<br>$$192.168.1.64$$<br>$$192.168.1.128$$<br>$$192.168.1.192$$
+192.168.1.0<br>192.168.1.64<br>192.168.1.128<br>192.168.1.192
 
 Notice how the last octet is incremented by 64 bits, which is the number we found in step 4.
 
 Step 6: Find the relevant information 
 
-Network address (first address): $$192.168.1.0$$<br>Broadcast address (last address): $$192.168.1.63$$ <br>Usable IP range (the IPs that can be assigned to devices on this subnet): $$192.168.1.1 - 192.168.2.62$$
+Network address (first address): 192.168.1.0<br>Broadcast address (last address): 192.168.1.63 <br>Usable IP range (the IPs that can be assigned to devices on this subnet): 192.168.1.1 - 192.168.2.62
 
 ---
 
 **Example 2:** Given IP address: 10.0.0.0/8
 
-Step 1: Calculate the host bits: $$32-8=24$$
+Step 1: Calculate the host bits: 32-8=24
 
 We have 24 host bits
 
 Step 2: Calculate the subnet mask
 
-Binary representation: $$11111111.00000000.00000000.00000000$$
+Binary representation: 11111111.00000000.00000000.00000000<br>Convert to decimal representation: 255.0.0.0
 
-Convert to decimal representation: $$255.0.0.0$$
+Step 3: Calculate the number of usable hosts: 
 
-Step 3: Calculate the number of usable hosts: $$2^{24}-2=16777216-2=16777214$$
+$$2^{24}-2=16777216-2=16777214$$
 
 We have 16777214 usable hosts in this network. 
 
-**Tip:** In general, the total number of hosts in a network is just: $$2^{\text{number of host bits}}$$
+**Tip:** In general, the total number of hosts in a network is just: 
 
-Step 4: Calculate the block size: $$256-255=1$$
+$$2^{\text{number of host bits}}$$
+
+Step 4: Calculate the block size: 256-255=1
 
 Step 5: Calculate the network range
 
-In this case, the next /8 network would start at $$11.0.0.0$$ then $$12.0.0.0$$ and so on.
+In this case, the next /8 network would start at 11.0.0.0 then 12.0.0.0 and so on.
 
 Step 6: Find the relevant information
 
-Network address: $$10.0.0.0$$<br>Broadcast address: $$10.255.255.255$$<br>Usable IP range: $$10.0.0.1 - 10.255.255.254$$
+Network address: 10.0.0.0<br>Broadcast address: 10.255.255.255<br>Usable IP range: 10.0.0.1 - 10.255.255.254
 
 <h3>HackTheBox Example Walkthroughs</h3>
 
@@ -161,20 +171,28 @@ blocks:<br>10.200.20.0<br>10.200.20.32<br>10.200.20.64<br>10.200.20.96<br>10.200
 
 **Question 3:** Split the network 10.200.20.0/27 into 4 subnets and submit the network address of the 3rd subnet as the answer.
 
-There are 5 host bits, so the number of hosts is: $$2^5 = 32$$
+There are 5 host bits, so the number of hosts is: 2^5 = 32
 
-We need to divide the 32 hosts we know by 4, and we know $$4 = 2^2$$
+We need to divide the 32 hosts we know by 4, and we know 4 = 2^2
 
-To determine number of bits to borrow:<br>We want 4 subnets from /27 network<br>Formula: $$2^n >=$$ required subnets so $$2^n >= 4$$ so $$n = 2$$<br>So, we need to borrow 2 bits from host portion
+To determine number of bits to borrow:<br>We want 4 subnets from /27 network<br>Formula: 2^n >= required subnets so 2^n >= 4 so n = 2<br>So, we need to borrow 2 bits from host portion
 
-Step 3: new subnet mask<br>Original mask: /27<br>We borrow two bits so the new mask is: $$/27 + 2 = /29$$<br>Host bits left: $$5-2=3$$<br>Total IPs per /29 subnet: $$2^3 = 8$$<br>Usable hosts per /29 subnet: $$8-2 = 6$$
+Step 3: new subnet mask<br>Original mask: /27<br>We borrow two bits so the new mask is: /27 + 2 = /29<br>Host bits left: 5-2=3<br>Total IPs per /29 subnet: 2^3 = 8<br>Usable hosts per /29 subnet: 8-2 = 6
 
 
-$$32-29=3$$ so we have 3 host bits<br>subnet mask: $$11111111.11111111.11111111.11111000$$<br>$$128+64+32+16+8 = 56+64+128=120+128=248$$<br>Decimal notation: $$255.255.255.248$$
+32-29=3 so we have 3 host bits<br>subnet mask: 
 
-Hosts per subnet: $$2^3 - 2 = 6$$<br>Size of each subnet: $$256-248=8$$<br>Blocks: 10.200.20.0,10.200.20.8,10.200.20.16,10.200.20.24
+$$11111111.11111111.11111111.11111000$$
+
+$$128+64+32+16+8 = 56+64+128=120+128=248$$
+
+Decimal notation: 255.255.255.248
+
+Hosts per subnet: 2^3 - 2 = 6<br>Size of each subnet: 256-248=8<br>Blocks: 10.200.20.0,10.200.20.8,10.200.20.16,10.200.20.24
 
 Original /27 network each range has 32 ips, now each has 8 so: 
+
+<div class="table-wrapper" markdown="1">
 
 | subnet# | network address | broadcast address | usable IPs |
 | ------- | --------------- | ----------------- | ---------- |
@@ -182,6 +200,8 @@ Original /27 network each range has 32 ips, now each has 8 so:
 | 2 | 10.200.20.8 | 10.200.20.15 | 10.200.20.9-14 |
 | 3 | 10.200.20.16 | 10.200.20.23 | 10.200.20.17-22 |
 | 4 | 10.200.20.24 | 10.200.20.31 | 10.200.20.25-30 |
+
+</div>
 
 **Answer:** <span class="reveal-answer">10.200.20.16</span>
 
