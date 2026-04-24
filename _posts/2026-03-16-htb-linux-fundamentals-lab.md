@@ -4,7 +4,7 @@ date: 2026-03-16
 categories: [cybersecurity]
 ---
 
-This article details my process and recommendations for completing the HackTheBox Linux Fundamentals lab which can be used a tutorial and learning guide for others to follow along as well. 
+This article details my process and recommendations for completing the HackTheBox Linux Fundamentals lab which can be used as a tutorial and learning guide for others to follow along as well. 
 
 <h2>Introduction</h2>
 
