@@ -1443,6 +1443,13 @@ mjx-container[jax="CHTML"][display="true"] {
     padding: 0.5rem;
 }
 
+mjx-container[jax="CHTML"] {
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+  vertical-align: middle;
+}
+
 code.language-plaintext.highlighter-rouge {
     padding-right: 0;
     padding-left: 0 !important;
