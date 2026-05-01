@@ -14,11 +14,14 @@ tags: [cybersecurity-portfolio]
   {% include archive-single.html %}
 {% endfor %} -->
 
-<div class="blog-post-list">
+Coming soon!
+
+<!-- UNCOMMENT EVERYTHING BELOW THIS LINE WHEN PORTFOLIO ITEMS ARE ADDED -->
+<!-- <div class="blog-post-list">
 
 {% for post in site.portfolio %}
   {% if post.tags and post.tags contains "cybersecurity-portfolio" %}
     {% include archive-single.html %}
   {% endif %}
 {% endfor %}
-</div>
+</div> -->

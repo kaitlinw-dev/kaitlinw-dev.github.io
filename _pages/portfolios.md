@@ -17,7 +17,7 @@ permalink: /portfolios/
       <a href="/portfolios/" class="dropdown-item">All</a>
 
       <a href="/portfolios/cybersecurity/" class ="dropdown-item">Cybersecurity</a>
-      <a href="/portfolios/data-analysis/" class="dropdown-item">Data Analysis</a>
+      <a href="/portfolios/mathematics/" class="dropdown-item">Mathematics</a>
 
     </div>
   </details>
@@ -30,9 +30,9 @@ permalink: /portfolios/
     <!-- <p>Cybersecurity projects.</p> -->
     </a>
 
-    <a href="/portfolios/data-analysis/" class="portfolio-category-card">
-    <h2>Data Analysis</h2>
-    <!-- <p>Data analysis projects.</p> -->
+    <a href="/portfolios/mathematics/" class="portfolio-category-card">
+    <h2>Mathematics</h2>
+    <!-- <p>Mathematics projects.</p> -->
     </a>
 
   </div>

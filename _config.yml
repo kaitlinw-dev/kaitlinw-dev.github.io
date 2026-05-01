@@ -237,7 +237,7 @@ collections:
   cybersecurity-portfolio:
     output: true
     permalink: /:collection/:path/
-  data-analysis-portfolio:
+  mathematics-portfolio:
     output: true
     permalink: /:collection/:path/
   talks:
@@ -302,7 +302,7 @@ defaults:
       share: true
   - scope:
       path: "" # empty = applies to the whole site
-      type: data-analysis-portfolio  # your new collection
+      type: mathematics-portfolio  # your new collection
     values:
       layout: single
       author_profile: false

@@ -1366,6 +1366,14 @@ a.blog-category-card::after {
     margin-bottom: 0 !important;
 }
 
+a.portfolio-category-card::after {
+    background: none !important;
+}
+
+.article-card a.card-link::after {
+    background: none !important;
+}
+
 .back-to-portfolios {
     display: inline-block;
     margin-bottom: 20px;
