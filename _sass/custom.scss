@@ -207,6 +207,10 @@ article.page .page__content {
     padding: 0 !important;
 }
 
+.page__content h2 {
+  margin-top: 0rem !important;
+}
+
 /* clearfix safety only */
 #main::after {
     content: "";
