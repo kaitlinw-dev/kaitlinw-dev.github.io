@@ -5,8 +5,6 @@ collection: mathematics-portfolio
 tags: [mathematics-portfolio]
 ---
 
-This is an item in your portfolio. It can be have images or nice text. If you name the file .md, it will be parsed as markdown. If you name the file .html, it will be parsed as HTML. 
-
 ## Overview 
 
 This project explores several principles of mathematical computing, specifically Constraint Satisfaction Problems (CSPs), algorithm design, and computational complexity. CSPs define specific conditions (constraints) that must be met in order for a mathematical solution to be valid. 
